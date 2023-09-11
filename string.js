@@ -28,16 +28,16 @@ function palindrom(text){
 }
 
 //Mostar en pantalla
-// alert("Hola, este programa le indica si su frase o palabra es palindroma");
+alert("Hola, este programa le indica si su frase o palabra es palindroma");
 
-// // pregunta y valida datos
-// x=true;
-// while(x==true){
-//   let text = prompt("Digite el texto");
-//   (text != '')
-//   ? (palindrom(text),x=false) 
-//   : alert("Porfavor digite un valor valido");
-// }
+// pregunta y valida datos
+x=true;
+while(x==true){
+  let text = prompt("Digite el texto");
+  (text != '')
+  ? (palindrom(text),x=false) 
+  : alert("Porfavor digite un valor valido");
+}
 
 //Anagrama
 
@@ -69,4 +69,14 @@ function anagramWord(text1,text2){
 // }
 
 anagramWord("Anagrama ","Amar, gana");
+
+// pregunta y valida datos
+x=true;
+while(x==true){
+  let text1 = prompt("Digite el primer texto");
+  let text2 = prompt("Digite el segundo texto");
+  (text1 != '' && text2 != '')
+  ? (anagramWord(text1,text2),x=false)
+  : alert("Porfavor digite un valor valido");
+}
 // anagramPhra("hoy tuve un gran dia muy demasiado es pectacular? yoh");
