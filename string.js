@@ -68,8 +68,6 @@ function anagramWord(text1,text2){
 //   console.log(anag);
 // }
 
-anagramWord("Anagrama ","Amar, gana");
-
 // pregunta y valida datos
 x=true;
 while(x==true){
