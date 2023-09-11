@@ -21,7 +21,7 @@ function palindrom(text){
   const invarr = text.split('');
   invarr.reverse()
   inv = invarr.join('');
-  (text === inv) ? alert(`Su frase: "${org}" \nES Palindroma`) : alert(`Su frase: "${org}" \nNO es Palindroma`);
+  (text === inv) ? alert(`Su texto: "${org}" \nES Palindroma`) : alert(`Su texto: "${org}" \nNO es Palindroma`);
 }
 
 //Mostar en pantalla
@@ -32,7 +32,7 @@ alert("Hola, este programa le indica si su frase o palabra es palindroma");
 x=true;
 while(x==true){
   let text = prompt("Digite el texto");
-  (text != '' )
+  (text != '')
   ? (palindrom(text),x=false) 
   : alert("Porfavor digite un valor valido");
 }
