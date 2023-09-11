@@ -53,20 +53,28 @@ function anagramWord(text1,text2){
 }
 
 //Evalua si en un texto hay anagramas
-// function anagramPhra(text){
-//   textR = text.replace(/[^a-zA-ZñÑáéíóúÁÉÍÓÚüÜ0-9 ]/g, '');
-//   textR = quitarTildes(textR);
-//   textR.toLowerCase();
-//   const arr = textR.split(" ");
-//   const anag = [];
-//   for (let i=0 ; i<arr.length-1 ; i++){
-//     const x = arr[i];
-//     const y = arr[i+1];
-//     console.log(x,y);
-//     // x.join('') == y.join('') ? anag.push[arr2[i]] : null
-//   }
-//   console.log(anag);
-// }
+function encontrarAnagramas(texto) {
+  function generarAnagramas(prefijo, restante) {
+    if (restante.length === 0) {
+      anagramas.push(prefijo);
+      return;
+    }
+
+    for (let i = 0; i < restante.length; i++) {
+      const caracter = restante[i];
+      const nuevoRestante = restante.slice(0, i) + restante.slice(i + 1);
+      generarAnagramas(prefijo + caracter, nuevoRestante);
+    }
+  }
+
+  const anagramas = [];
+  generarAnagramas('', texto);
+  return anagramas;
+}
+
+// const texto = "abc";
+// const anagramasEncontrados = encontrarAnagramas(texto);
+// console.log(anagramasEncontrados)
 
 // pregunta y valida datos
 x=true;
@@ -77,4 +85,11 @@ while(x==true){
   ? (anagramWord(text1,text2),x=false)
   : alert("Porfavor digite un valor valido");
 }
-// anagramPhra("hoy tuve un gran dia muy demasiado es pectacular? yoh");
+
+x=true;
+while(x==true){
+  let text = prompt("Digite el texto para encontrar todos sus posibles anagramas");
+  (text != '')
+  ? ("Todos los anagramas posibles son: ",console.log(encontrarAnagramas(text)),x=false)
+  : alert("Porfavor digite un valor valido");
+}
